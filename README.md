@@ -1,28 +1,6 @@
 Visualizing Data from the European Social Survey with R
 ================
 Dimiter Toshkov (@DToshkov)
-31 March, 2020
-
-<style type="text/css">
-div.main-container {
-  max-width: 1680px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-code{
-  font-size: 16px;
-}
-
-code.r{
-  font-size: 14px;
-}
-
-pre {
-  font-size: 14px
-}
-
-</style>
 
  
 
@@ -125,7 +103,7 @@ summary(dat$pspwght) # post-stratification weights
 In this tutorial we will focus on the variable `eimpcnt`, which collects
 responses to the survey question *‘Allow many/few immigrants from poorer
 countries in Europe’* (here is a
-[screenshot](http://dimiter.eu/Visualization_files/ESS/documentation/q_formulation.png)
+[screenshot](https://github.com/demetriodor/ESS/blob/master/documentation/q_formulation.png)
 from the actual questionnaire with the *exact* question formulation).
 The original answer categories can be checked with the
 `attributes()$labels` function. We can rename this variable to something
@@ -817,7 +795,7 @@ still look big enough. As you can see from the code below, we increase
 the width and height of the plot, as well as the font sizes and line
 thickness, three times. The result looks much sharper (here is a link to
 the [full-size
-image](http://dimiter.eu/Visualizations_files/ESS/figures/F1_big.png);
+image](https://github.com/demetriodor/ESS/blob/master/figures/F1_big.png);
 look at it at 100% magnification), which comes at the price of a larger
 file size (which, however, at 285 KB should not be a point of concern).
 Note that some small tweaks might need to be made to legends and other
@@ -935,7 +913,9 @@ of `png()` (and specify a `.pdf` extension of the output file). When we
 save a pdf we specify the size of the desired output file in inches; for
 example, to make an A4-sized pdf, set the width to 11.69, and the height
 to 8.27. There is no need to specify a resolution (and there is no need
-to scale up the font sizes and line widths).
+to scale up the font sizes and line widths). Here is a
+[link](https://github.com/demetriodor/ESS/blob/master/figures/F1.pdf) to
+the pdf version of the graph.
 
 ``` r
 pdf ('./figures/F1_A4.pdf', width=11.69, height=8.27)
@@ -1118,7 +1098,7 @@ mtext(text= fontawesome('fa-rss'),
 
 Following this tutorial you learned how to read ESS data in R, create
 tables of the distribution of weighted responses per country, make
-divergent stacked bar carts, customize fonts, colors, axes, legends,
+divergent stacked bars charts, customize fonts, colors, axes, legends,
 titles and other annotations, include country flags, emojis and special
 icons in the plots, and save crisp `png` and `pdf` versions of your
 work. You can adapt the code to set your own dataviz style and
@@ -1138,7 +1118,7 @@ the [Font Awesome](https://fontawesome.com/) and [Flat
 Icon](https://www.flaticon.com/) emojis, icons and country flag images.
 This tutorial has been produced in `Rmarkdown` from `RStudio` with
 `knitr`. The code for the tutorial is available on
-[Github](https://github.com/demetriodor/).  
+[Github](https://github.com/demetriodor/ESS).  
 
 # Contact
 

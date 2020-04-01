@@ -30,7 +30,7 @@ meta() %>%
   meta_viewport() %>% 
   meta_social(
     title = "Visualizing ESS data with R",
-    url = "http://dimiter.eu/Visualizations_files/ESS.html",
+    url = "http://dimiter.eu/Visualizations_files/Visualizing_ESS_data.html",
     #image = "https://r4ds.had.co.nz/cover.png",
     #image_alt = "The cover of the R4DS book",
     og_type = "article",
@@ -110,7 +110,7 @@ summary(dat$pspwght) # post-stratification weights
 &nbsp;
 
 # Computing weighted statistics
-In this tutorial we will focus on the variable `eimpcnt`, which collects responses to the survey question *'Allow many/few immigrants from poorer countries in Europe'* (here is a [screenshot](http://dimiter.eu/Visualization_files/ESS/documentation/q_formulation.png) from the actual questionnaire with the *exact* question formulation). The original answer categories can be checked with the `attributes()$labels` function. We can rename this variable to something more memorable and specify it as an *ordered factor*.
+In this tutorial we will focus on the variable `eimpcnt`, which collects responses to the survey question *'Allow many/few immigrants from poorer countries in Europe'* (here is a [screenshot](https://github.com/demetriodor/ESS/blob/master/documentation/q_formulation.png) from the actual questionnaire with the *exact* question formulation). The original answer categories can be checked with the `attributes()$labels` function. We can rename this variable to something more memorable and specify it as an *ordered factor*.
 
 ```{r eval=TRUE, collapse=TRUE}
 attributes(dat$eimpcnt)$labels
@@ -594,7 +594,7 @@ dev.off()
 &nbsp;
 
 ## Saving a large-sized png
-However, the resulting plot does not look that sharp even on my relatively small laptop. Changing the resolution (say to 300) while keeping the width and height the same would achieve nothing (try it!). We can improve the sharpness of the image by enlarging the dimensions of the `png` while keeping the same resolution. But we will have to increase the size of most elements of the plot as well, so they will still look big enough. As you can see from the code below, we increase the width and height of the plot, as well as the font sizes and line thickness, three times. The result looks much sharper (here is a link to the [full-size image](http://dimiter.eu/Visualizations_files/ESS/figures/F1_big.png); look at it at 100% magnification), which comes at the price of a larger file size (which, however, at 285 KB should not be a point of concern). Note that some small tweaks might need to be made to legends and other annotations to ensure that everything still falls in its right place. 
+However, the resulting plot does not look that sharp even on my relatively small laptop. Changing the resolution (say to 300) while keeping the width and height the same would achieve nothing (try it!). We can improve the sharpness of the image by enlarging the dimensions of the `png` while keeping the same resolution. But we will have to increase the size of most elements of the plot as well, so they will still look big enough. As you can see from the code below, we increase the width and height of the plot, as well as the font sizes and line thickness, three times. The result looks much sharper (here is a link to the [full-size image](https://github.com/demetriodor/ESS/blob/master/figures/F1_big.png); look at it at 100% magnification), which comes at the price of a larger file size (which, however, at 285 KB should not be a point of concern). Note that some small tweaks might need to be made to legends and other annotations to ensure that everything still falls in its right place. 
 &nbsp;
 
 ```{r class.source = NULL, eval=FALSE, collapse=TRUE}
@@ -703,7 +703,8 @@ dev.off()
 &nbsp;
 
 ## Saving a pdf
-If we want to save a `pdf`, we have to call the `pdf()` function instead of `png()` (and specify a `.pdf` extension of the output file). When we save a pdf we specify the size of the desired output file in inches; for example, to make an A4-sized pdf, set the width to 11.69, and the height to 8.27. There is no need to specify a resolution (and there is no need to scale up the font sizes and line widths).
+If we want to save a `pdf`, we have to call the `pdf()` function instead of `png()` (and specify a `.pdf` extension of the output file). When we save a pdf we specify the size of the desired output file in inches; for example, to make an A4-sized pdf, set the width to 11.69, and the height to 8.27. There is no need to specify a resolution (and there is no need to scale up the font sizes and line widths). Here is a [link](https://github.com/demetriodor/ESS/blob/master/figures/F1.pdf) to the pdf version of the graph.
+
 ```{r eval=FALSE, collapse=TRUE}
 pdf ('./figures/F1_A4.pdf', width=11.69, height=8.27)
 ### plot comes here
@@ -863,11 +864,11 @@ mtext(text= fontawesome('fa-rss'),
 &nbsp;
 
 # Summing up
-Following this tutorial you learned how to read ESS data in R, create tables of the distribution of weighted responses per country, make divergent stacked bar carts, customize fonts, colors, axes, legends, titles and other annotations, include country flags, emojis and special icons in the plots, and save crisp `png` and `pdf` versions of your work. You can adapt the code to set your own dataviz style and signature. You have the power to tweak essentially all elements of the graphs directly, without resorting to Photoshop or some other graphics editor. And you can do all that in `base R` rather than `ggplot2`. You are ready to deploy your dataviz skills to explore the hundreds of public opinions and attitudes that the ESS has measured. Have fun and plot responsibly!
+Following this tutorial you learned how to read ESS data in R, create tables of the distribution of weighted responses per country, make divergent stacked bars charts, customize fonts, colors, axes, legends, titles and other annotations, include country flags, emojis and special icons in the plots, and save crisp `png` and `pdf` versions of your work. You can adapt the code to set your own dataviz style and signature. You have the power to tweak essentially all elements of the graphs directly, without resorting to Photoshop or some other graphics editor. And you can do all that in `base R` rather than `ggplot2`. You are ready to deploy your dataviz skills to explore the hundreds of public opinions and attitudes that the ESS has measured. Have fun and plot responsibly!
 &nbsp;
 
 # Acknowledgements
-Respect to all the people behind the awesome R packages and functions used in this tutorial, all the researchers responsible for the design, collection and distribution of ESS survey, as well as the designers of the [Font Awesome](https://fontawesome.com/) and [Flat Icon](https://www.flaticon.com/) emojis, icons and country flag images. This tutorial has been produced in `Rmarkdown` from `RStudio` with `knitr`. The code for the tutorial is available on [Github](https://github.com/demetriodor/).
+Respect to all the people behind the awesome R packages and functions used in this tutorial, all the researchers responsible for the design, collection and distribution of the ESS surveys, as well as the designers of the [Font Awesome](https://fontawesome.com/) and [Flat Icon](https://www.flaticon.com/) emojis, icons and country flag images. This tutorial has been produced in `Rmarkdown` from `RStudio` with `knitr`. The code for the tutorial is available on [Github](https://github.com/demetriodor/ESS).
 &nbsp;
 
 # Contact
